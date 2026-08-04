@@ -47,7 +47,7 @@ export default function Products({ darkMode }: ProductsProps) {
   return (
     <section id="products" style={{ padding: '100px 24px', background: darkMode ? '#0A0F1E' : '#F8FAFC' }}>
       <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-        <div ref={headRef} className="section-reveal" style={{ textAlign: 'center', marginBottom: 64 }}>
+        <div ref={headRef} className="section-reveal" data-animate="fade-right" style={{ textAlign: 'center', marginBottom: 64 }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'rgba(245,158,11,0.12)', border: '1px solid rgba(245,158,11,0.3)', borderRadius: 100, padding: '6px 18px', marginBottom: 20 }}>
             <span style={{ color: '#F59E0B', fontSize: 13, fontFamily: 'Poppins, sans-serif', fontWeight: 600 }}>Featured Products</span>
           </div>

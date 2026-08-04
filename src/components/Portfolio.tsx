@@ -52,7 +52,7 @@ export default function Portfolio({ darkMode }: PortfolioProps) {
   return (
     <section id="portfolio" style={{ padding: '100px 24px', background: darkMode ? '#050911' : '#FFFFFF' }}>
       <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-        <div ref={headRef} className="section-reveal" style={{ textAlign: 'center', marginBottom: 48 }}>
+        <div ref={headRef} className="section-reveal" data-animate="fade-right" style={{ textAlign: 'center', marginBottom: 48 }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'rgba(37,99,235,0.1)', border: '1px solid rgba(37,99,235,0.25)', borderRadius: 100, padding: '6px 18px', marginBottom: 20 }}>
             <span style={{ color: '#2563EB', fontSize: 13, fontFamily: 'Poppins, sans-serif', fontWeight: 600 }}>Our Work</span>
           </div>
@@ -88,11 +88,11 @@ export default function Portfolio({ darkMode }: PortfolioProps) {
           </div>
         </div>
 
-        <div ref={gridRef} className="section-reveal" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 24, marginBottom: 80 }}>
+        <div ref={gridRef} className="section-reveal" data-animate="fade-left" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 24, marginBottom: 80 }}>
           {filtered.map(item => (
             <div
               key={item.title}
-              className="card-hover"
+              className="card-hover hover-float"
               style={{
                 background: darkMode ? '#111827' : '#FFFFFF',
                 border: `1px solid ${darkMode ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.07)'}`,
@@ -102,10 +102,7 @@ export default function Portfolio({ darkMode }: PortfolioProps) {
               }}
             >
               <div style={{ position: 'relative', height: 200, overflow: 'hidden' }}>
-                <img src={item.image} alt={item.title} style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.4s ease' }}
-                  onMouseEnter={e => ((e.target as HTMLImageElement).style.transform = 'scale(1.05)')}
-                  onMouseLeave={e => ((e.target as HTMLImageElement).style.transform = 'scale(1)')}
-                />
+                <img src={item.image} alt={item.title} className="hover-zoom" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 <div style={{ position: 'absolute', top: 12, right: 12, background: `${item.color}22`, border: `1px solid ${item.color}50`, color: item.color, padding: '3px 10px', borderRadius: 100, fontSize: 11, fontFamily: 'Poppins, sans-serif', fontWeight: 600 }}>
                   {item.category}
                 </div>

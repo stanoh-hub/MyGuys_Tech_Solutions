@@ -167,8 +167,9 @@ export default function Hero({ darkMode: _darkMode }: HeroProps) {
           position: 'relative',
           zIndex: 10,
           textAlign: 'center',
-          padding: '0 24px',
+          padding: '0 16px',
           maxWidth: 900,
+          width: '100%',
           margin: '0 auto',
         }}
       >

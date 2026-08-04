@@ -43,6 +43,7 @@ export default function Navbar({ darkMode, toggleDark }: NavbarProps) {
         right: 0,
         zIndex: 1000,
         transition: 'all 0.3s ease',
+        animation: 'fadeInUp 0.45s ease both',
         background: scrolled
           ? darkMode
             ? 'rgba(10,15,30,0.95)'
@@ -56,14 +57,14 @@ export default function Navbar({ darkMode, toggleDark }: NavbarProps) {
         boxShadow: scrolled ? '0 4px 20px rgba(0,0,0,0.08)' : 'none',
       }}
     >
-      <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0 24px' }}>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 72 }}>
+      <div style={{ maxWidth: 1280, width: '100%', margin: '0 auto', padding: '0 16px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 72, minWidth: 0 }}>
           {/* Logo */}
           <button
             onClick={() => handleNav('#home')}
             style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
           >
-            <img src={logoImg} alt="MyGuys Tech Solutions" style={{ height: 48, width: 'auto', objectFit: 'contain' }} />
+            <img src={logoImg} alt="MyGuys Tech Solutions" style={{ height: 64, width: 220, maxWidth: '100%', objectFit: 'contain' }} />
           </button>
 
           {/* Desktop Links */}
@@ -137,7 +138,7 @@ export default function Navbar({ darkMode, toggleDark }: NavbarProps) {
               className="btn-primary hidden-mobile"
               style={{ padding: '9px 20px', fontSize: 13 }}
             >
-              Get Free Consultation
+              Get Consultation
             </button>
 
             {/* Hamburger */}
@@ -169,7 +170,7 @@ export default function Navbar({ darkMode, toggleDark }: NavbarProps) {
           style={{
             background: darkMode ? 'rgba(10,15,30,0.98)' : 'rgba(255,255,255,0.98)',
             backdropFilter: 'blur(16px)',
-            padding: '16px 24px 24px',
+            padding: '16px 16px 24px',
             borderTop: `1px solid ${darkMode ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.06)'}`,
           }}
         >
@@ -204,7 +205,7 @@ export default function Navbar({ darkMode, toggleDark }: NavbarProps) {
             className="btn-primary"
             style={{ width: '100%', marginTop: 12, justifyContent: 'center' }}
           >
-            Get Free Consultation
+            Get Consultation
           </button>
         </div>
       )}

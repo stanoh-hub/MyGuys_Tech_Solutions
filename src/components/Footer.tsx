@@ -22,12 +22,12 @@ export default function Footer({ darkMode }: FooterProps) {
 
   return (
     <footer style={{ background: '#0A0F1E', color: '#94A3B8', paddingTop: 72 }}>
-      <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px' }}>
+      <div style={{ maxWidth: 1200, width: '100%', margin: '0 auto', padding: '0 16px' }}>
         {/* Top Row */}
         <div style={{ display: 'grid', gridTemplateColumns: '2fr repeat(3, 1fr)', gap: 48, paddingBottom: 56, borderBottom: '1px solid rgba(255,255,255,0.07)' }}>
           {/* Brand */}
           <div>
-            <img src={logoImg} alt="MyGuys Tech Solutions" style={{ height: 52, objectFit: 'contain', marginBottom: 20, filter: 'brightness(1.1)' }} />
+            <img src={logoImg} alt="MyGuys Tech Solutions" style={{ height: 80, width: 260, maxWidth: '100%', objectFit: 'contain', marginBottom: 20, filter: 'brightness(1.1)' }} />
             <p style={{ lineHeight: 1.8, fontSize: 14, marginBottom: 24, maxWidth: 300, color: '#64748B' }}>
               Building Africa's Digital Future, One Solution at a Time. Your trusted technology partner in Kenya and across Africa.
             </p>
@@ -37,12 +37,13 @@ export default function Footer({ darkMode }: FooterProps) {
               <p style={{ fontSize: 12, fontFamily: 'Poppins, sans-serif', fontWeight: 600, color: '#CBD5E1', marginBottom: 12, textTransform: 'uppercase', letterSpacing: 1 }}>
                 Newsletter
               </p>
-              <div style={{ display: 'flex', gap: 8 }}>
+              <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
                 <input
                   type="email"
                   placeholder="your@email.com"
                   style={{
                     flex: 1,
+                    minWidth: 0,
                     padding: '10px 14px',
                     borderRadius: 8,
                     border: '1px solid rgba(255,255,255,0.1)',
@@ -53,7 +54,7 @@ export default function Footer({ darkMode }: FooterProps) {
                     outline: 'none',
                   }}
                 />
-                <button className="btn-primary" style={{ padding: '10px 16px', fontSize: 13, flexShrink: 0 }}>
+                <button className="btn-primary" style={{ padding: '10px 16px', fontSize: 13, flexShrink: 0, minWidth: 0 }}>
                   Subscribe
                 </button>
               </div>
@@ -108,7 +109,7 @@ export default function Footer({ darkMode }: FooterProps) {
           <div style={{ display: 'flex', gap: 16, alignItems: 'center' }}>
             <span style={{ fontSize: 13 }}>Made with ❤️ in Kenya</span>
             <div style={{ display: 'flex', gap: 12 }}>
-              {['💼', '🐦', '📘', '📸'].map((icon, i) => (
+              {['💼', '�', '▶️', '🎵'].map((icon, i) => (
                 <button
                   key={i}
                   style={{

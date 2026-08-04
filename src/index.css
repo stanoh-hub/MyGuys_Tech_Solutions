@@ -73,11 +73,31 @@ body {
   margin: 0;
   padding: 0;
   transition: background-color 0.3s ease, color 0.3s ease;
+  min-width: 0;
+}
+
+img, svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button, input, textarea, select {
+  font: inherit;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Poppins', sans-serif;
 }
+
+@media (max-width: 768px) {
+  .btn-primary,
+  .btn-outline {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
 
 /* Scrollbar */
 ::-webkit-scrollbar {
@@ -176,12 +196,31 @@ h1, h2, h3, h4, h5, h6 {
 
 .section-reveal {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transform: translateY(30px) scale(0.96);
+  filter: blur(6px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1), filter 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform, filter;
 }
 .section-reveal.visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
+.section-reveal[data-animate='fade-right'] {
+  transform: translateX(-30px) scale(0.96);
+}
+.section-reveal[data-animate='fade-left'] {
+  transform: translateX(30px) scale(0.96);
+}
+.section-reveal[data-animate='fade-right'].visible,
+.section-reveal[data-animate='fade-left'].visible {
+  transform: translateX(0) scale(1);
+}
+.section-reveal[data-animate='scale-up'] {
+  transform: translateY(24px) scale(0.92);
+}
+.section-reveal[data-animate='scale-up'].visible {
+  transform: translateY(0) scale(1);
 }
 
 .gradient-text {
@@ -235,6 +274,31 @@ h1, h2, h3, h4, h5, h6 {
   background: rgba(255,255,255,0.1);
   border-color: rgba(255,255,255,0.6);
   transform: translateY(-2px);
+}
+
+.hover-float {
+  transition: transform 0.35s ease, box-shadow 0.35s ease, filter 0.35s ease;
+}
+.hover-float:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 18px 50px rgba(37, 99, 235, 0.12);
+}
+
+.hover-zoom {
+  transition: transform 0.4s ease;
+}
+.hover-zoom:hover {
+  transform: scale(1.05);
+}
+
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: fadeInUp 0.75s ease forwards;
+}
+
+.button-hover-scale:hover {
+  transform: translateY(-2px) scale(1.01);
 }
 
 .service-card {

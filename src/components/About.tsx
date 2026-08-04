@@ -53,7 +53,7 @@ export default function About({ darkMode }: AboutProps) {
     <section id="about" style={{ padding: '100px 24px', background: darkMode ? '#0A0F1E' : '#F8FAFC' }}>
       <div style={{ maxWidth: 1200, margin: '0 auto' }}>
         {/* Section Header */}
-        <div ref={headRef} className="section-reveal" style={{ textAlign: 'center', marginBottom: 72 }}>
+        <div ref={headRef} className="section-reveal" data-animate="fade-right" style={{ textAlign: 'center', marginBottom: 72 }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'rgba(37,99,235,0.1)', border: '1px solid rgba(37,99,235,0.25)', borderRadius: 100, padding: '6px 18px', marginBottom: 20 }}>
             <span style={{ color: '#2563EB', fontSize: 13, fontFamily: 'Poppins, sans-serif', fontWeight: 600 }}>Our Story</span>
           </div>
@@ -85,7 +85,7 @@ export default function About({ darkMode }: AboutProps) {
           ].map(item => (
             <div
               key={item.title}
-              className="card-hover"
+              className="card-hover hover-float"
               style={{
                 background: item.gradient,
                 borderRadius: 16,
@@ -101,7 +101,7 @@ export default function About({ darkMode }: AboutProps) {
         </div>
 
         {/* Core Values */}
-        <div ref={valuesRef} className="section-reveal" style={{ marginBottom: 80 }}>
+        <div ref={valuesRef} className="section-reveal" data-animate="fade-left" style={{ marginBottom: 80 }}>
           <h3 style={{ textAlign: 'center', fontSize: '1.8rem', fontFamily: 'Poppins, sans-serif', fontWeight: 700, color: darkMode ? '#F1F5F9' : '#0F172A', marginBottom: 40 }}>
             Our Core <span className="gradient-text">Values</span>
           </h3>
@@ -121,7 +121,7 @@ export default function About({ darkMode }: AboutProps) {
         </div>
 
         {/* Why Choose Us */}
-        <div ref={whyRef} className="section-reveal">
+        <div ref={whyRef} className="section-reveal" data-animate="fade-right">
           <h3 style={{ textAlign: 'center', fontSize: '1.8rem', fontFamily: 'Poppins, sans-serif', fontWeight: 700, color: darkMode ? '#F1F5F9' : '#0F172A', marginBottom: 40 }}>
             Why Choose <span className="gradient-text">Us?</span>
           </h3>
